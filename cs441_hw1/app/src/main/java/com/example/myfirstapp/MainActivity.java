@@ -1,6 +1,7 @@
 package com.example.myfirstapp;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -35,24 +36,38 @@ public class MainActivity extends AppCompatActivity {
                                         "Greetings silly human, take me to your leader!",
                                         "echo Hello World!"
                                         };
+
+            Typeface[] possibleTypefaces = {Typeface.MONOSPACE,
+                                            Typeface.SERIF,
+                                            Typeface.SANS_SERIF,
+                                            Typeface.DEFAULT
+                                        };
+
             @Override
             public void onClick(View view) {
                 Random randNumGen = new Random();
                 TextView helloTextView = (TextView) findViewById(R.id.label1);
 
+                //change text
                 int nextText = randNumGen.nextInt(possibleStrings.length);
                 helloTextView.setText(possibleStrings[nextText]);
 
+                //change color of text
                 int randomColor = randNumGen.nextInt(16777215);
                 String color = "#" + Integer.toHexString(randomColor);
                 helloTextView.setTextColor(Color.parseColor(color));
 
-                // reposition text
+                //reposition text
+                //float randomX = randNumGen.nextFloat() * 0.6f + 0.1f;
+                //float randomY = randNumGen.nextFloat() * 0.8f + 0.1f;
+                //helloTextView.setX(randomX);
+                //helloTextView.setY(randomY);
 
-                // change font stuff
+                // change text style
+                int nextStyle = randNumGen.nextInt(3);
+                int nextTF = randNumGen.nextInt(possibleTypefaces.length);
+                helloTextView.setTypeface(possibleTypefaces[nextTF], nextStyle);
 
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                       // .setAction("Action", null).show();
             }
         });
     }
