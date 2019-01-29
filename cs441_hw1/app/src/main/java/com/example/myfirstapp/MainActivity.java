@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,16 +26,16 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
 
-            String[] possibleStrings = {"Now I'm over here! Hello World!",
-                                        "Lookie over here! Hello World!",
-                                        "Do ya see me Hello Worlding over here?",
+            String[] possibleStrings = {"Hello World in this style of text!",
+                                        "Have you seen enough Hello Worlds yet?",
                                         "Hello World!",
                                         "System.out.println(\"Hello World!\");",
                                         "printf(\"Hello World!\");",
                                         "cout << \"Hello World!\" << endl;",
                                         "Hello from CS 441!",
                                         "Greetings silly human, take me to your leader!",
-                                        "echo Hello World!"
+                                        "echo Hello World!",
+                                        "Hello World in this text color!"
                                         };
 
             Typeface[] possibleTypefaces = {Typeface.MONOSPACE,
@@ -56,12 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 int randomColor = randNumGen.nextInt(16777215);
                 String color = "#" + Integer.toHexString(randomColor);
                 helloTextView.setTextColor(Color.parseColor(color));
-
-                //reposition text
-                //float randomX = randNumGen.nextFloat() * 0.6f + 0.1f;
-                //float randomY = randNumGen.nextFloat() * 0.8f + 0.1f;
-                //helloTextView.setX(randomX);
-                //helloTextView.setY(randomY);
 
                 // change text style
                 int nextStyle = randNumGen.nextInt(3);
