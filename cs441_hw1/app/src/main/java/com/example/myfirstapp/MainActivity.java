@@ -28,8 +28,12 @@ public class MainActivity extends AppCompatActivity {
                                         "Lookie over here! Hello World!",
                                         "Do ya see me Hello Worlding over here?",
                                         "Hello World!",
-                                        "System.out.println(\"Hello World!\")",
-                                        ""
+                                        "System.out.println(\"Hello World!\");",
+                                        "printf(\"Hello World!\");",
+                                        "cout << \"Hello World!\" << endl;",
+                                        "Hello from CS 441!",
+                                        "Greetings silly human, take me to your leader!",
+                                        "echo Hello World!"
                                         };
             @Override
             public void onClick(View view) {
